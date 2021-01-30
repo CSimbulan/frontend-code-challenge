@@ -85,12 +85,12 @@ const App = () => {
             <ul className="suggestions">
                 {/*Map the results stored in the state to the list.*/}
                 {data.length > 0 ? data.map(mon =>
-                    <li>
+                    <li key={mon.Name}>
                         <img src={mon.img} alt="" />
                         <div className="info">
                             <h1>{highlightSearch(mon.Name)}</h1>
                             {mon.Types.map(typing =>
-                                <span className={"type " + typing.toLowerCase()}>
+                                <span className={"type " + typing.toLowerCase()} key={mon.Number + typing}>
                                     {typing}
                                 </span>)}
                         </div>
